@@ -24,5 +24,5 @@ setup(
         'Programming Language :: Python :: 3.14.0',
         'Operating System :: OS Independent',
     ],
-    python_requires='>=3.12.0',
+    python_requires='>=3x',
 )
