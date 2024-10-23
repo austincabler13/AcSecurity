@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='AcSecurity',
-    version='0.2',
+    version='0.3',
     packages=find_packages(),
     install_requires=[
         'pip-audit',
@@ -21,8 +21,7 @@ setup(
     author_email='austin_cabler@icloud.com',
     url='https://github.com/austincabler13/AcSecurity',
     classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.14.0',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.12.0',
