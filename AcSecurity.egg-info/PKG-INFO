@@ -1,15 +1,16 @@
 Metadata-Version: 2.1
 Name: AcSecurity
-Version: 0.1
+Version: 0.2
 Summary: A security scanner for applications.
-Home-page: https://github.com/yourusername/AcSecurity
+Home-page: https://github.com/austincabler13/AcSecurity
 Author: Austin Cabler
 Author-email: austin_cabler@icloud.com
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
+Requires-Python: >=3.12.0
 Description-Content-Type: text/markdown
+Requires-Dist: pip-audit
 Requires-Dist: pylint
 
 # AcSecurity
