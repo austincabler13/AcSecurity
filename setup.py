@@ -21,7 +21,7 @@ setup(
     author_email='austin_cabler@icloud.com',
     url='https://github.com/austincabler13/AcSecurity',
     classifiers=[
-        'Programming Language :: Python :: 3.14.0',
+        'Programming Language :: Python :: 3.12',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3',
