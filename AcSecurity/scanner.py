@@ -1,5 +1,6 @@
 import os
 import subprocess
+import argparse
 
 class AcSecurity:
     def __init__(self, app_path):
@@ -15,9 +16,12 @@ class AcSecurity:
 
     def check_for_common_vulnerabilities(self):
         for root, _, files in os.walk(self.app_path):
-            for file in files:
-                if file.endswith(('.py', '.js', '.java', '.html', '.c', '.cs', '.cpp', '.lua')):
-                    self.check_file(os.path.join(root, file))
+         if 'venv' in root:  # Skip venv directory
+            continue
+        for file in files:
+            if file.endswith(('.py', '.js', '.java', '.html', '.c', '.cs', '.cpp', '.lua')):
+                self.check_file(os.path.join(root, file))
+
 
     def check_file(self, file_path):
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -53,3 +57,19 @@ class AcSecurity:
                     f.write(f"{vulnerability}\n")
             else:
                 f.write("No vulnerabilities found.\n")
+
+def main():
+    parser = argparse.ArgumentParser(description='Scan applications for common security vulnerabilities.')
+    parser.add_argument('app_path', type=str, help='Path to the application to scan')
+    args = parser.parse_args()
+
+    # Create the scanner instance with the app_path argument
+    scanner = AcSecurity(args.app_path)
+    vulnerabilities = scanner.scan()
+    print("Scan completed. Check 'issues.txt' for details.")
+    if vulnerabilities:
+        for v in vulnerabilities:
+            print(v)
+
+if __name__ == "__main__":
+    main()

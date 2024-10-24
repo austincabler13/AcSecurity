@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'pip-audit',
         'pylint',
-
+        'argparse',
     ],
     entry_points={
         'console_scripts': [
@@ -20,9 +20,18 @@ setup(
     author='Austin Cabler',
     author_email='austin_cabler@icloud.com',
     url='https://github.com/austincabler13/AcSecurity',
-    classifiers=[
-        'Programming Language :: Python :: 3.12',
-        'Operating System :: OS Independent',
+        classifiers=[
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
+    'Operating System :: linux',
+    'Operating System :: Microsoft :: Windows',
     ],
-    python_requires='>=3',
+    python_requires='>=3.12',
 )

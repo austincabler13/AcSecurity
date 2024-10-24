@@ -1,5 +1,6 @@
 Vulnerabilities found:
-Error checking dependencies: [Errno 2] No such file or directory: '/home/austin/AcSecurity/AcSecurity'
+No dependency vulnerabilities found.
 Code quality issues found:
-************* Module /home/austin/AcSecurity/AcSecurity
-AcSecurity:1:0: F0001: No module named AcSecurity (fatal)
+************* Module AcSecurity
+__init__.py:1:0: F0010: error while code parsing: Unable to load file /home/austin/AcSecurity/__init__.py:
+[Errno 2] No such file or directory: '/home/austin/AcSecurity/__init__.py' (parse-error)
