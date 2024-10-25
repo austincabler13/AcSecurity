@@ -1,4 +1,4 @@
-from AcSecurity.scanner import AcSecurity
+import AcSecurity
 
-scanner = AcSecurity('/home/austin/AcSecurity')
+scanner = AcSecurity('/home/austin/AcSecurity/AcSecurity')
 vulnerabilities = scanner.scan()

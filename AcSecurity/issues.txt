@@ -1,34 +1,3 @@
-Vulnerabilities found:
-No dependency vulnerabilities found.
-Code quality issues found:
-************* Module AcSecurity
-/home/austin/AcSecurity/__init__.py:1:0: C0103: Module name "AcSecurity" doesn't conform to snake_case naming style (invalid-name)
-/home/austin/AcSecurity/__init__.py:11:0: C0413: Import "import AcSecurity" should be placed at the top of the module (wrong-import-position)
-/home/austin/AcSecurity/__init__.py:11:0: W0406: Module import itself (import-self)
-************* Module AcSecurity.setup
-/home/austin/AcSecurity/setup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-/home/austin/AcSecurity/setup.py:18:21: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-/home/austin/AcSecurity/setup.py:18:21: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-************* Module AcSecurity.run_scanner
-/home/austin/AcSecurity/run_scanner.py:5:0: C0301: Line too long (106/100) (line-too-long)
-/home/austin/AcSecurity/run_scanner.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-/home/austin/AcSecurity/run_scanner.py:2:0: E0401: Unable to import 'AcSecurity.scanner' (import-error)
-/home/austin/AcSecurity/run_scanner.py:2:0: E0611: No name 'scanner' in module 'AcSecurity' (no-name-in-module)
-/home/austin/AcSecurity/run_scanner.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module AcSecurity.test_scanner
-/home/austin/AcSecurity/test_scanner.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-/home/austin/AcSecurity/test_scanner.py:1:0: E0401: Unable to import 'AcSecurity.scanner' (import-error)
-/home/austin/AcSecurity/test_scanner.py:1:0: E0611: No name 'scanner' in module 'AcSecurity' (no-name-in-module)
-************* Module AcSecurity.AcSecurity
-__init__.py:1:0: C0103: Module name "AcSecurity" doesn't conform to snake_case naming style (invalid-name)
-__init__.py:11:0: C0413: Import "import AcSecurity" should be placed at the top of the module (wrong-import-position)
-************* Module AcSecurity.AcSecurity.scanner
-scanner.py:39:0: C0301: Line too long (101/100) (line-too-long)
-scanner.py:41:0: C0301: Line too long (106/100) (line-too-long)
-scanner.py:70:0: C0301: Line too long (106/100) (line-too-long)
-scanner.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scanner.py:39:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-scanner.py:50:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-
-------------------------------------------------------------------
-Your code has been rated at 5.58/10 (previous run: 3.49/10, +2.09)
+Vulnerability 1: Description of vulnerability 1.
+Vulnerability 2: Description of vulnerability 2.
+Vulnerability 3: Description of vulnerability 3.

@@ -1,3 +1,5 @@
+# Important: This script creates the module and makes it work without it this will not work.🔴 DO NOT DELETE.
+
 import os
 import subprocess
 import argparse
@@ -5,7 +7,7 @@ import argparse
 class AcSecurity:
     """Scanner for identifying security vulnerabilities and code quality issues in an application."""
 
-    VERSION = "1.2.11"  # Define the version here
+    VERSION = "1.2.10"  # Define the version here
 
     def __init__(self, app_path):
         self.app_path = app_path
@@ -74,15 +76,16 @@ def main():
 
     args = parser.parse_args()
 
-    if args.app_path is None:
+    if args.app_path is None and not args.version:
         print("Error: app_path is required to run a scan.")
         parser.print_help()
         return
 
-    # Create the scanner instance with the app_path argument
-    scanner = AcSecurity(args.app_path)
-    scanner.scan()
-    print("Scan completed. Check 'issues.txt' for details.")
+    if args.app_path:
+        # Create the scanner instance with the app_path argument
+        scanner = AcSecurity(args.app_path)
+        scanner.scan()
+        print("Scan completed. Check 'issues.txt' for details.")
 
 if __name__ == "__main__":
     main()

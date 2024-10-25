@@ -1,8 +1,5 @@
 README.md
 setup.py
-AcSecurity/__init__.py
-AcSecurity/run_scanner.py
-AcSecurity/scanner.py
 AcSecurity.egg-info/PKG-INFO
 AcSecurity.egg-info/SOURCES.txt
 AcSecurity.egg-info/dependency_links.txt
