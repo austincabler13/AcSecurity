@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcSecurity Documentation</title>
+    
+ <!-- Tailwind CSS CDN -->
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <!-- Font Awesome CDN -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+
+    <!-- AlpineJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js"></script>
+
+    <!-- PrismJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <!-- AOS for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-['Inter']" x-data="{ navOpen: false }">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-violet-600">AcSecurity</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#features" class="border-transparent text-gray-500 hover:text-violet-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Features</a>
+                        <a href="#installation" class="border-transparent text-gray-500 hover:text-violet-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Installation</a>
+                        <a href="#usage" class="border-transparent text-gray-500 hover:text-violet-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Usage</a>
+                        <a href="#contributing" class="border-transparent text-gray-500 hover:text-violet-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contributing</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="https://github.com/austincabler13/AcSecurity" class="text-gray-400 hover:text-violet-600">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-violet-600 to-purple-600 text-blue">
+            <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+                <div data-aos="fade-up" class="text-center">
+                    <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                        AcSecurity
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto text-base sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                        A Python module designed to scan applications for common security vulnerabilities, hardcoded secrets, and code quality issues.
+                    </p>
+                    <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                        <div class="rounded-md shadow">
+                            <a href="#installation" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-violet-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">Comprehensive Security Scanning</p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div data-aos="fade-up" class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 shadow-lg">
+                            <div class="-mt-6">
+                                <div class="inline-flex items-center justify-center p-3 bg-violet-500 rounded-md shadow-lg">
+                                    <i class="fas fa-key text-white text-2xl"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Common Vulnerability Checks</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Scans for hardcoded secrets such as passwords or API keys in your code.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="100" class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 shadow-lg">
+                            <div class="-mt-6">
+                                <div class="inline-flex items-center justify-center p-3 bg-violet-500 rounded-md shadow-lg">
+                                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Dependency Vulnerability Checks</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Uses pip-audit to identify known vulnerabilities in your installed Python packages.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="200" class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 shadow-lg">
+                            <div class="-mt-6">
+                                <div class="inline-flex items-center justify-center p-3 bg-violet-500 rounded-md shadow-lg">
+                                    <i class="fas fa-code text-white text-2xl"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Code Quality Checks</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Uses pylint to identify code quality issues and ensure your code adheres to best practices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Installation Section -->
+        <div id="installation" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="px-6 py-8">
+                    <h3 class="text-2xl font-bold text-gray-900">Installation</h3>
+                    <p class="mt-4 text-gray-600">Ensure you have Python 3.12.0 and pip installed on your machine.</p>
+                    <div class="mt-6">
+                        <pre><code class="language-bash">pip install AcSecurity</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Section -->
+        <div id="usage" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="px-6 py-8">
+                    <h3 class="text-2xl font-bold text-gray-900">Usage</h3>
+                    <p class="mt-4 text-gray-600">After installing the module, you can use it to scan your application directory for vulnerabilities:</p>
+                    <div class="mt-6">
+                        <pre><code class="language-bash">acsecurity /path/to/your/application</code></pre>
+                    </div>
+                    <p class="mt-4 text-gray-600">Example:</p>
+                    <div class="mt-2">
+                        <pre><code class="language-bash">acsecurity /home/user/my_project</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributing Section -->
+        <div id="contributing" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="px-6 py-8">
+                    <h3 class="text-2xl font-bold text-gray-900">Contributing</h3>
+                    <p class="mt-4 text-gray-600">Contributions are welcome! Please follow these steps:</p>
+                    <ol class="mt-4 list-decimal list-inside space-y-2 text-gray-600">
+                        <li>Fork the repository</li>
+                        <li>Create a new feature branch</li>
+                        <li>Make your changes</li>
+                        <li>Commit your changes with a clear message</li>
+                        <li>Push your branch to your fork</li>
+                        <li>Submit a pull request</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="text-white">
+                    <span class="font-bold text-xl">AcSecurity</span>
+                    <p class="mt-2 text-gray-300">Licensed under MIT License</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/austincabler13/AcSecurity" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Init -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+    </script>
+</body>
+</html>
