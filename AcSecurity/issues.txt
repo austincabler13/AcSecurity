@@ -1,3 +1,0 @@
-Vulnerability 1: Description of vulnerability 1.
-Vulnerability 2: Description of vulnerability 2.
-Vulnerability 3: Description of vulnerability 3.
