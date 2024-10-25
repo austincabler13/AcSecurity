@@ -2,7 +2,6 @@ Vulnerabilities found:
 No dependency vulnerabilities found.
 Code quality issues found:
 ************* Module AcSecurity
-/home/austin/AcSecurity/__init__.py:11:0: C0304: Final newline missing (missing-final-newline)
 /home/austin/AcSecurity/__init__.py:1:0: C0103: Module name "AcSecurity" doesn't conform to snake_case naming style (invalid-name)
 /home/austin/AcSecurity/__init__.py:11:0: C0413: Import "import AcSecurity" should be placed at the top of the module (wrong-import-position)
 /home/austin/AcSecurity/__init__.py:11:0: W0406: Module import itself (import-self)
@@ -20,43 +19,16 @@ Code quality issues found:
 /home/austin/AcSecurity/test_scanner.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 /home/austin/AcSecurity/test_scanner.py:1:0: E0401: Unable to import 'AcSecurity.scanner' (import-error)
 /home/austin/AcSecurity/test_scanner.py:1:0: E0611: No name 'scanner' in module 'AcSecurity' (no-name-in-module)
-************* Module AcSecurity.AcSecurity.__init__
-__init__.py:11:0: C0304: Final newline missing (missing-final-newline)
 ************* Module AcSecurity.AcSecurity
 __init__.py:1:0: C0103: Module name "AcSecurity" doesn't conform to snake_case naming style (invalid-name)
 __init__.py:11:0: C0413: Import "import AcSecurity" should be placed at the top of the module (wrong-import-position)
 ************* Module AcSecurity.AcSecurity.scanner
-scanner.py:19:0: W0311: Bad indentation. Found 9 spaces, expected 12 (bad-indentation)
-scanner.py:20:0: W0311: Bad indentation. Found 12 spaces, expected 16 (bad-indentation)
-scanner.py:34:0: C0301: Line too long (101/100) (line-too-long)
-scanner.py:36:0: C0301: Line too long (106/100) (line-too-long)
-scanner.py:62:0: C0301: Line too long (106/100) (line-too-long)
+scanner.py:39:0: C0301: Line too long (101/100) (line-too-long)
+scanner.py:41:0: C0301: Line too long (106/100) (line-too-long)
+scanner.py:70:0: C0301: Line too long (106/100) (line-too-long)
 scanner.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scanner.py:5:0: C0115: Missing class docstring (missing-class-docstring)
-scanner.py:10:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:17:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:21:20: W0631: Using possibly undefined loop variable 'files' (undefined-loop-variable)
-scanner.py:23:45: W0631: Using possibly undefined loop variable 'root' (undefined-loop-variable)
-scanner.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:32:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:39:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scanner.py:34:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-scanner.py:42:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:49:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scanner.py:44:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-scanner.py:52:4: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:53:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-scanner.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-scanner.py:1:0: R0801: Similar lines in 2 files
-==AcSecurity.AcSecurity.scanner:[61:68]
-==AcSecurity.run_scanner:[4:11]
-    parser = argparse.ArgumentParser(description='Scan applications for common security vulnerabilities.')
-    parser.add_argument('app_path', type=str, help='Path to the application to scan')
-    args = parser.parse_args()
-
-    # Create the scanner instance with the app_path argument
-    scanner = AcSecurity(args.app_path)
-    vulnerabilities = scanner.scan() (duplicate-code)
+scanner.py:39:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+scanner.py:50:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
 
 ------------------------------------------------------------------
-Your code has been rated at 3.49/10 (previous run: 3.49/10, +0.00)
+Your code has been rated at 5.58/10 (previous run: 3.49/10, +2.09)
