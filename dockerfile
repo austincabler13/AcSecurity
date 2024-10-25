@@ -11,4 +11,4 @@ COPY test_scanner.py .
 RUN pip install pip-audit pylint
 
 # Command to run when the container starts
-CMD ["python3", "test_scanner.py"]
+CMD ["python3", "./scanner.py"]
