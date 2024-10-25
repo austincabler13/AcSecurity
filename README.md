@@ -9,6 +9,7 @@ AcSecurity is a Python module designed to scan applications for common security 
   - [Installation](#installation)
   - [Usage](#usage)
     - [Example](#example)
+  - [Version View and Help View](#version-view-and-help-view)
   - [Features](#features)
   - [Contributing](#contributing)
   - [License](#license)
@@ -42,12 +43,21 @@ After installing the module, you can use it to scan your application directory f
 acsecurity /home/user/my_project
 ```
 
+## Version View and Help View
+
+```bash
+acsecurity --version
+acsecurity --help
+```
+
 ## Features
 
 - **Common Vulnerability Checks**: Scans for hardcoded secrets such as passwords or API keys in your code.
 - **Dependency Vulnerability Checks**: Uses `pip-audit` to identify known vulnerabilities in your installed Python packages.
 - **Code Quality Checks**: Uses `pylint` to identify code quality issues and ensure your code adheres to best practices.
 - **Output**: All findings are written to `issues.txt` in the current directory.
+- **Version:** you can know use ```--version``` and view the version you have
+- **Help** you can know use ```--help``` and get Help and see what you can do.
 
 ## Contributing
 
