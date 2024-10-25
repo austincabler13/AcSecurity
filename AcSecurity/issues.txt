@@ -54,9 +54,9 @@ scanner.py:1:0: R0801: Similar lines in 2 files
     parser.add_argument('app_path', type=str, help='Path to the application to scan')
     args = parser.parse_args()
 
+    # Create the scanner instance with the app_path argument
     scanner = AcSecurity(args.app_path)
-    vulnerabilities = scanner.scan()
- (duplicate-code)
+    vulnerabilities = scanner.scan() (duplicate-code)
 
------------------------------------
-Your code has been rated at 3.49/10
+------------------------------------------------------------------
+Your code has been rated at 3.49/10 (previous run: 3.49/10, +0.00)
