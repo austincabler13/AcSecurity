@@ -1,3 +1,4 @@
 pip-audit
 pylint
 argparse
+pytest

@@ -1,13 +1,15 @@
 from setuptools import setup, find_packages
+import os
 
 setup(
     name='AcSecurity',
-    version='1.1.0',
+    version='1.1.1',
     packages=find_packages(),
     install_requires=[
         'pip-audit',
         'pylint',
         'argparse',
+        'pytest',
     ],
     entry_points={
         'console_scripts': [
@@ -15,7 +17,7 @@ setup(
         ],
     },
     description='A security scanner for applications.',
-    long_description=open('README.md').read(),
+    long_description=open(os.path.join("docs", "README.md")).read(),  # Fix the path here
     long_description_content_type='text/markdown',
     author='Austin Cabler',
     author_email='austin_cabler@icloud.com',
