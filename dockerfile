@@ -1,14 +1,20 @@
-FROM python:3.12.3
+# Use an official base image
+FROM python:3.9-slim
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the scanner script and test script
-COPY scanner.py .
-COPY test_scanner.py .
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Install pip-audit and pylint
-RUN pip install pip-audit pylint
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Command to run when the container starts
-CMD ["python3", "./scanner.py"]
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
