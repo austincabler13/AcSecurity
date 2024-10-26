@@ -3,7 +3,7 @@ import os
 
 setup(
     name='AcSecurity',
-    version='1.1.1',
+    version='1.1.2',
     packages=find_packages(),
     install_requires=[
         'pip-audit',
@@ -17,7 +17,7 @@ setup(
         ],
     },
     description='A security scanner for applications.',
-    long_description=open(os.path.join("docs", "README.md")).read(),  # Fix the path here
+    long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type='text/markdown',
     author='Austin Cabler',
     author_email='austin_cabler@icloud.com',

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: AcSecurity
-Version: 1.1.1
+Version: 1.1.2
 Summary: A security scanner for applications.
 Home-page: https://github.com/austincabler13/AcSecurity
 Author: Austin Cabler
@@ -16,28 +16,28 @@ Requires-Dist: argparse
 Requires-Dist: pytest
 
 
-# ðAcSecurity
+# 🔒AcSecurity
 
 AcSecurity is a Python module designed to scan applications for common security vulnerabilities. It checks for hardcoded secrets, dependency vulnerabilities, and code quality issues.
 
-## ð¤·ââï¸Table of Contents
+## 🤷‍♂️Table of Contents
 
-- [ðAcSecurity](#acsecurity)
-  - [ð¤·ââï¸Table of Contents](#ï¸table-of-contents)
-  - [ðInstallation](#installation)
-  - [ð¨Usage](#usage)
-    - [ðExample](#example)
-  - [ðVersion View and Help View](#version-view-and-help-view)
-  - [ðFeatures](#features)
-  - [ðContributing](#contributing)
-  - [âï¸License](#ï¸license)
-  - [ð¨Founder](#founder)
-    - [ð§âð»About the Founder](#about-the-founder)
-    - [ðï¸Acknowledgments](#ï¸acknowledgments)
-  - [ðPython Package](#python-package)
-  - [âï¸Note](#ï¸note)
+- [🔒AcSecurity](#acsecurity)
+  - [🤷‍♂️Table of Contents](#️table-of-contents)
+  - [🆘Installation](#installation)
+  - [🔨Usage](#usage)
+    - [🆘Example](#example)
+  - [👍Version View and Help View](#version-view-and-help-view)
+  - [😎Features](#features)
+  - [💖Contributing](#contributing)
+  - [⚖️License](#️license)
+  - [🔨Founder](#founder)
+    - [🧑‍💻About the Founder](#about-the-founder)
+    - [🗒️Acknowledgments](#️acknowledgments)
+  - [🐍Python Package](#python-package)
+  - [⚖️Note](#️note)
 
-## ðInstallation
+## 🆘Installation
 
 You can install AcSecurity using `pip`. Open your terminal and run:
 
@@ -47,9 +47,9 @@ pip install AcSecurity
 
 Ensure you have Python 3.12.0 and `pip` installed on your machine.
 
-## ð¨Usage
+## 🔨Usage
 
-After installing the module, you can use it to scan your application directory for vulnerabilities. Hereâs how to do it:
+After installing the module, you can use it to scan your application directory for vulnerabilities. Here’s how to do it:
 
 1. Open your terminal or command prompt.
 2. Run the scanner using the command below, replacing `/path/to/your/application` with the path to your application directory:
@@ -60,13 +60,13 @@ After installing the module, you can use it to scan your application directory f
 
 3. The scanner will output any vulnerabilities found in your application.
 
-### ðExample
+### 🆘Example
 
 ```bash
 acsecurity /home/user/my_project
 ```
 
-## ðVersion View and Help View
+## 👍Version View and Help View
 
 You can check the version and access help information using the following commands:
 
@@ -75,7 +75,7 @@ acsecurity --version
 acsecurity --help
 ```
 
-## ðFeatures
+## 😎Features
 
 - **Common Vulnerability Checks:** Scans for hardcoded secrets such as passwords or API keys in your code.
 - **Dependency Vulnerability Checks:** Uses `pip-audit` to identify known vulnerabilities in your installed Python packages.
@@ -84,7 +84,7 @@ acsecurity --help
 - **Version Info:** Use `--version` to view the version you have.
 - **Help Info:** Use `--help` to get assistance and see what you can do.
 
-## ðContributing
+## 💖Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -95,28 +95,28 @@ Contributions are welcome! Please follow these steps:
 5. Push your branch to your fork.
 6. Submit a pull request.
 
-## âï¸License
+## ⚖️License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## ð¨Founder
+## 🔨Founder
 
 **Austin Cabler**  
 [GitHub Profile](https://github.com/austincabler13)  
 Contact: [austin_cabler@icloud.com](mailto:austin_cabler@icloud.com)
 
-### ð§âð»About the Founder
+### 🧑‍💻About the Founder
 
 I am the founder of AcSecurity. As the sole developer on this project, I created AcSecurity to simplify security for users, as tools like Snyk can be challenging to use. I will always strive to make AcSecurity user-friendly.
 
-### ðï¸Acknowledgments
+### 🗒️Acknowledgments
 
 If you would like to contribute to this project, please contact me. As a solo developer, I would love to receive help from individuals interested in my project.
 
-## ðPython Package
+## 🐍Python Package
 
 [![Upload Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
 
-## âï¸Note
+## ⚖️Note
 
 Please do not copy, rewrite, or sell this without my permission.
