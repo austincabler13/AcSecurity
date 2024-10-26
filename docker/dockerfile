@@ -1,20 +1,19 @@
-# Use an official base image
-FROM python:3.9-slim
+# Dockerfile
+FROM python:3.12-slim
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy the project files to the container
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy the rest of the project files
+COPY src/ src/
+COPY tests/ tests/
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Run tests to verify the setup
+RUN pytest tests/
 
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Command to run the scanner module
+CMD ["python", "src/scanner.py"]
