@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: AcSecurity
-Version: 0.2.12
+Version: 0.3.12
 Summary: A security scanner for applications.
 Home-page: https://github.com/austincabler13/AcSecurity
 Author: Austin Cabler
@@ -25,9 +25,14 @@ AcSecurity is a Python module designed to scan applications for common security 
   - [Installation](#installation)
   - [Usage](#usage)
     - [Example](#example)
+  - [Version View and Help View](#version-view-and-help-view)
   - [Features](#features)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Founder/Owner](#founderowner)
+    - [Austin Cabler](#austin-cabler)
+  - [Python Package](#python-package)
+  - [Note](#note)
 
 ## Installation
 
@@ -58,12 +63,21 @@ After installing the module, you can use it to scan your application directory f
 acsecurity /home/user/my_project
 ```
 
+## Version View and Help View
+
+```bash
+acsecurity --version
+acsecurity --help
+```
+
 ## Features
 
 - **Common Vulnerability Checks**: Scans for hardcoded secrets such as passwords or API keys in your code.
 - **Dependency Vulnerability Checks**: Uses `pip-audit` to identify known vulnerabilities in your installed Python packages.
 - **Code Quality Checks**: Uses `pylint` to identify code quality issues and ensure your code adheres to best practices.
 - **Output**: All findings are written to `issues.txt` in the current directory.
+- **Version:** you can know use ```--version``` and view the version you have
+- **Help** you can know use ```--help``` and get Help and see what you can do.
 
 ## Contributing
 
@@ -80,5 +94,12 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+## Founder/Owner
+### Austin Cabler
 
+
+## Python Package
 [![Upload Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
+
+## Note
+- Please Do not copy rewrite, or sell this without my permission
