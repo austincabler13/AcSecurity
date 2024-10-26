@@ -7,7 +7,7 @@ import argparse
 class AcSecurity:
     """Scanner for identifying security vulnerabilities and code quality issues in an application."""
 
-    VERSION = "0.4.15"  ## Without this the --version flag will not work.
+    VERSION = "1.1.0"  ## Without this the --version flag will not work.
 
     def __init__(self, app_path):
         self.app_path = app_path
