@@ -9,8 +9,12 @@ AcSecurity is a Python module designed to scan applications for common security 
   - [🤷‍♂️Table of Contents](#️table-of-contents)
   - [🆘Installation](#installation)
   - [🔨Usage](#usage)
-    - [🆘Example](#example)
-  - [👍Version View and Help View](#version-view-and-help-view)
+    - [🔥Vulnerabilitie Scan](#vulnerabilitie-scan)
+    - [🔨Command Line Options](#command-line-options)
+    - [🗒️Versions](#️versions)
+    - [🆘Help](#help)
+    - [👍Backups](#backups)
+  - [🔒Reports](#reports)
   - [😎Features](#features)
   - [💖Contributing](#contributing)
   - [⚖️License](#️license)
@@ -32,31 +36,51 @@ Ensure you have Python 3.12.0 and `pip` installed on your machine.
 
 ## 🔨Usage
 
-After installing the module, you can use it to scan your application directory for vulnerabilities. Here’s how to do it:
-
-1. Open your terminal or command prompt.
-2. Run the scanner using the command below, replacing `/path/to/your/application` with the path to your application directory:
-
-   ```bash
-   acsecurity /path/to/your/application
-   ```
-
-3. The scanner will output any vulnerabilities found in your application.
-
-### 🆘Example
+### 🔥Vulnerabilitie Scan
 
 ```bash
-acsecurity /home/user/my_project
+  acsecurity /path/to/your/application
 ```
 
-## 👍Version View and Help View
+- Checks for Vulnerabilities in your Code
 
-You can check the version and access help information using the following commands:
+### 🔨Command Line Options
+
+- version: Displays the version of AcSecurity.
+- backup: Creates a backup of the application code.
+- report: Generates a JSON report of the vulnerabilities found.
+
+### 🗒️Versions
 
 ```bash
 acsecurity --version
+```
+
+- Checks what Version you have
+
+### 🆘Help
+
+```bash
 acsecurity --help
 ```
+
+- See what you can do with This Module
+
+### 👍Backups
+
+```bash
+python scanner.py /path/to/your/application --backup
+```
+
+- Creates a backup of your Code if you Deleted something or Messed something up
+
+## 🔒Reports
+
+```bash
+python scanner.py /path/to/your/application --report
+```
+
+- Creates a Report/Overview of your Issues/Vulnerabilities in your project
 
 ## 😎Features
 
@@ -66,6 +90,8 @@ acsecurity --help
 - **Output:** All findings are written to `issues.txt` in the current directory.
 - **Version Info:** Use `--version` to view the version you have.
 - **Help Info:** Use `--help` to get assistance and see what you can do.
+- **Backups** Use `--backup` at the end of your command to allow a backup of your code
+- **Reports:** Use `--report` to get a report/overview of your vulnerabilities
 
 ## 💖Contributing
 
