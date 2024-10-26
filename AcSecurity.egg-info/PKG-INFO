@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: AcSecurity
-Version: 0.3.13
+Version: 0.4.13
 Summary: A security scanner for applications.
 Home-page: https://github.com/austincabler13/AcSecurity
 Author: Austin Cabler
@@ -29,8 +29,10 @@ AcSecurity is a Python module designed to scan applications for common security 
   - [Features](#features)
   - [Contributing](#contributing)
   - [License](#license)
-  - [Founder/Owner](#founderowner)
-    - [Austin Cabler](#austin-cabler)
+- [**Founder**](#founder)
+  - [Austin Cabler](#austin-cabler)
+  - [**About the Founder**](#about-the-founder)
+  - [**Acknowledgments**](#acknowledgments)
   - [Python Package](#python-package)
   - [Note](#note)
 
@@ -94,9 +96,23 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Founder/Owner
-### Austin Cabler
+**Founder**
+================
 
+[Austin Cabler](https://github.com/austincabler13)
+----------------
+
+Contact: [austin_cabler@icloud.com](mailto:austin_cabler@icloud.com)
+
+**About the Founder**
+--------------------
+
+I am the Founder of AcSecurity, what I do for AcSecurity is create the Project I have edited, Created and Made AcSecurity has the only developer/person on the team I created AcSecurity to make Securtiy easy for people has Snyk is hard to use but has a developer and Founder I will try to always make AcSecurity easy for people.
+
+**Acknowledgments**
+-----------------
+
+If you would like to help in this project please contact me and let me know has a solo developer I would love to get help from people thats into my Project.
 
 ## Python Package
 [![Upload Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
