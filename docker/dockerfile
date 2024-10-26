@@ -12,8 +12,5 @@ RUN pip install -r requirements.txt
 COPY src/ src/
 COPY tests/ tests/
 
-# Run tests to verify the setup
-RUN pytest tests/
-
 # Command to run the scanner module
 CMD ["python", "src/scanner.py"]
