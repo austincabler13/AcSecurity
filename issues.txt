@@ -1,3 +1,3 @@
 Vulnerabilities found:
-No dependency vulnerabilities found.
-Error checking code quality: Command '['pylint', 'C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests']' returned non-zero exit status 20.
+Error checking dependencies: [WinError 267] The directory name is invalid
+Error checking code quality: Command '['pylint', 'C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests']' returned non-zero exit status 1.
