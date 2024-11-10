@@ -6,7 +6,6 @@ import argparse
 import logging
 import shutil
 import json
-import openai  # Make sure to install this package
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -74,75 +73,15 @@ class AcSecurity:
             self.vulnerabilities.append(f"Error checking code quality: {e}")
 
     def write_issues_to_file(self):
-        """Write the found vulnerabilities and issues to issues.txt file with suggestions for fixing."""
+        """Write the found vulnerabilities and issues to issues.txt file."""
         logging.info("Writing issues to file...")
         with open('issues.txt', 'w', encoding='utf-8') as f:
             if self.vulnerabilities:
                 f.write("Vulnerabilities found:\n")
                 for vulnerability in self.vulnerabilities:
                     f.write(f"{vulnerability}\n")
-                    # Suggestions for fixing issues
-                    if 'hardcoded secret' in vulnerability:
-                        f.write("Suggestion: Remove any hardcoded secrets or passwords from your code.\n")
-                    elif 'Dependency vulnerabilities' in vulnerability:
-                        f.write("Suggestion: Run 'pip install --upgrade [package]' to update vulnerable packages.\n")
-                    elif 'Code quality issues' in vulnerability:
-                        f.write("Suggestion: Review the reported issues and improve your code accordingly.\n")
             else:
                 f.write("No vulnerabilities found.\n")
-
-    def generate_report(self):
-        """Generate a JSON report of the vulnerabilities found with better error messages."""
-        report = {
-            "version": self.VERSION,
-            "issues": [],
-        }
-        
-        for issue in self.vulnerabilities:
-            issue_details = {"message": issue}
-            if 'hardcoded secret' in issue:
-                issue_details['suggestion'] = "Remove any hardcoded secrets or passwords from your code."
-            elif 'Dependency vulnerabilities' in issue:
-                issue_details['suggestion'] = "Run 'pip install --upgrade [package]' to update vulnerable packages."
-            elif 'Code quality issues' in issue:
-                issue_details['suggestion'] = "Review the reported issues and improve your code accordingly."
-            report["issues"].append(issue_details)
-
-        with open('report.json', 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=4)
-        logging.info("Report generated: report.json")
-
-    def fix_code_with_ai(self, code_snippet):
-        """Use ChatGPT to suggest fixes for the provided code snippet."""
-        openai.api_key = "YOUR_API_KEY"  # Add your OpenAI API key
-
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Or any other model you want to use
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Here is a code snippet with issues:\n{code_snippet}\nPlease suggest fixes."
-                }
-            ]
-        )
-
-        return response['choices'][0]['message']['content']  # Get the AI's response
-
-    def interact_with_user(self):
-        """Allow user to interact and decide whether to fix issues or not."""
-        for issue in self.vulnerabilities:
-            print(issue)
-            user_choice = input("Would you like to get AI suggestions for this issue? (yes/no): ")
-            if user_choice.lower() == 'yes':
-                code_snippet = input("Please provide the code snippet to fix:\n")
-                ai_suggestion = self.fix_code_with_ai(code_snippet)
-                print(f"AI Suggestion:\n{ai_suggestion}")
-                apply_fix = input("Would you like to apply this fix? (yes/no): ")
-                if apply_fix.lower() == 'yes':
-                    # Code to apply the AI suggestion (implement this part as needed)
-                    pass
-                else:
-                    print("Fix not applied.")
 
     def backup_code(self):
         """Backup the application code."""
@@ -156,6 +95,16 @@ class AcSecurity:
                 shutil.copy(file_path, self.backup_path)
 
         logging.info(f"Backup completed. All files are backed up to: {self.backup_path}")
+
+    def generate_report(self):
+        """Generate a JSON report of the vulnerabilities found."""
+        report = {
+            "version": self.VERSION,
+            "issues": self.vulnerabilities
+        }
+        with open('report.json', 'w', encoding='utf-8') as f:
+            json.dump(report, f, indent=4)
+        logging.info("Report generated: report.json")
 
 def main():
     parser = argparse.ArgumentParser(description='AcSecurity - Scan applications for security vulnerabilities.')
@@ -183,9 +132,6 @@ def main():
         
         if args.report:
             scanner.generate_report()
-
-        # Interact with user for AI suggestions
-        scanner.interact_with_user()
 
 if __name__ == "__main__":
     main()

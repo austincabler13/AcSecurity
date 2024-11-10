@@ -1,0 +1,4 @@
+Vulnerabilities found:
+Potential hardcoded secret found in: C:\Users\Cable\Documents\GitHub\CGS\AcSecurity\src\scanner.py
+No dependency vulnerabilities found.
+Error checking code quality: Command '['pylint', 'C:\\Users\\Cable\\Documents\\GitHub\\CGS\\AcSecurity\\src']' returned non-zero exit status 20.
