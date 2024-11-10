@@ -1,5 +1,6 @@
 # Important: This script creates the module and makes it work without it this will not work.🔴 DO NOT DELETE.
 
+# from math import e  # Removed unused import
 import os
 import subprocess
 import argparse
@@ -144,7 +145,8 @@ class AcSecurity:
                     pass
                 else:
                     print("Fix not applied.")
-
+            else:
+                print("No AI suggestions requested.")
 
 def backup_code(self):
     if not os.path.exists(self.backup_path):
@@ -157,6 +159,7 @@ def backup_code(self):
             shutil.copy(file_path, backup_file_path)
 
     logging.info(f"Backup completed. All files are backed up to: {self.backup_path}")
+    logging.info("Backup directory already exists. Skipping backup.")
 
 
 def main():
