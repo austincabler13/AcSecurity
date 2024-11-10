@@ -1,0 +1,11 @@
+{
+    "version": "1.2.0",
+    "issues": [
+        {
+            "message": "Error checking dependencies: Command '['pip-audit']' returned non-zero exit status 1."
+        },
+        {
+            "message": "Error checking code quality: Command '['pylint', 'A:\\\\GitHub\\\\CGS\\\\3d-Maker']' returned non-zero exit status 30."
+        }
+    ]
+}
