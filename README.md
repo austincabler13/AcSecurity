@@ -124,8 +124,8 @@ If you would like to contribute to this project, please contact me. As a solo de
 
 ## 🐍Python Package
 
-[![Upload Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
+[![Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
 
 ## ⚖️Note
 
-Please do not copy, rewrite, or sell this without my permission.
+Please do not rewrite, or sell this without my permission.

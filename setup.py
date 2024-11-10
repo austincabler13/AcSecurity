@@ -3,7 +3,7 @@ import os
 
 setup(
     name='AcSecurity',
-    version='1.1.3',
+    version='1.2.0',
     packages=find_packages(),
     install_requires=[
         'pip-audit',
