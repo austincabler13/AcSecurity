@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import os
 
 setup(
     name='AcSecurity',
@@ -12,10 +11,10 @@ setup(
         'pytest',
     ],
     entry_points={
-        'console_scripts': [
-            'acsecurity=AcSecurity.run_scanner:main',
-        ],
-    },
+    'console_scripts': [
+        'acsecurity=src.scanner:main',
+    ],
+},
     description='A security scanner for applications.',
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type='text/markdown',

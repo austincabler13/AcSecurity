@@ -1,6 +1,3 @@
-# Important: This script creates the module and makes it work without it this will not work.🔴 DO NOT DELETE.
-
-# from math import e  # Removed unused import
 import os
 import subprocess
 import argparse
@@ -16,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class AcSecurity:
     """Scanner for identifying security vulnerabilities and code quality issues in an application."""
 
-    VERSION = "1.2.0"  # Without this the --version flag will not work.
+    VERSION = "1.2.0"
 
     def __init__(self, app_path):
         self.app_path = app_path
@@ -66,14 +63,17 @@ class AcSecurity:
     def check_code_quality(self):
         """Run pylint to check code quality issues."""
         logging.info("Checking code quality...")
-        try:
-            result = subprocess.run(['pylint', self.app_path], capture_output=True, text=True, check=True)
-            if result.stdout:
-                self.vulnerabilities.append(f"Code quality issues found:\n{result.stdout.strip()}")
-            else:
-                self.vulnerabilities.append("No code quality issues found.")
-        except Exception as e:
-            self.vulnerabilities.append(f"Error checking code quality: {e}")
+        result = subprocess.run(
+            ['pylint', '--rcfile=.pylintrc', self.app_path],
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            self.vulnerabilities.append("No code quality issues found.")
+        elif result.returncode in (28,):  # Adjust as needed for specific exit codes
+            self.vulnerabilities.append(f"Code quality issues (non-fatal):\n{result.stdout.strip()}")
+        else:
+            self.vulnerabilities.append(f"Code quality issues found:\n{result.stdout.strip()}")
 
     def write_issues_to_file(self):
         """Write the found vulnerabilities and issues to issues.txt file with suggestions for fixing."""
@@ -83,7 +83,6 @@ class AcSecurity:
                 f.write("Vulnerabilities found:\n")
                 for vulnerability in self.vulnerabilities:
                     f.write(f"{vulnerability}\n")
-                    # Suggestions for fixing issues
                     if 'hardcoded secret' in vulnerability:
                         f.write("Suggestion: Remove any hardcoded secrets or passwords from your code.\n")
                     elif 'Dependency vulnerabilities' in vulnerability:
@@ -119,7 +118,7 @@ class AcSecurity:
         openai.api_key = "YOUR_API_KEY"  # Add your OpenAI API key
 
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Or any other model you want to use
+            model="gpt-3.5-turbo",
             messages=[
                 {
                     "role": "user",
@@ -128,7 +127,7 @@ class AcSecurity:
             ]
         )
 
-        return response['choices'][0]['message']['content']  # Get the AI's response
+        return response['choices'][0]['message']['content']
 
     def interact_with_user(self):
         """Allow user to interact and decide whether to fix issues or not."""
@@ -141,8 +140,7 @@ class AcSecurity:
                 print(f"AI Suggestion:\n{ai_suggestion}")
                 apply_fix = input("Would you like to apply this fix? (yes/no): ")
                 if apply_fix.lower() == 'yes':
-                    # Code to apply the AI suggestion (implement this part as needed)
-                    pass
+                    pass  # Implement applying fix if necessary
                 else:
                     print("Fix not applied.")
             else:
@@ -176,7 +174,6 @@ def main():
         return
 
     if args.app_path:
-        # Create the scanner instance with the app_path argument
         scanner = AcSecurity(args.app_path)
         
         if args.backup:
@@ -188,7 +185,6 @@ def main():
         if args.report:
             scanner.generate_report()
 
-        # Interact with user for AI suggestions
         scanner.interact_with_user()
 
 if __name__ == "__main__":
