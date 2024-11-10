@@ -4,3 +4,4 @@ argparse
 pytest
 openai
 setuptools
+uuid

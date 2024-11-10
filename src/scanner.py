@@ -7,6 +7,7 @@ import logging
 import shutil
 import json
 import openai  # Make sure to install this package
+import uuid
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -144,18 +145,19 @@ class AcSecurity:
                 else:
                     print("Fix not applied.")
 
-    def backup_code(self):
-        """Backup the application code."""
-        if not os.path.exists(self.backup_path):
-            os.makedirs(self.backup_path)
 
-        # Copy files to the backup directory
-        for root, dirs, files in os.walk(self.app_path):
-            for file in files:
-                file_path = os.path.join(root, file)
-                shutil.copy(file_path, self.backup_path)
+def backup_code(self):
+    if not os.path.exists(self.backup_path):
+        os.makedirs(self.backup_path)
 
-        logging.info(f"Backup completed. All files are backed up to: {self.backup_path}")
+    for root, _, files in os.walk(self.app_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            backup_file_path = os.path.join(self.backup_path, f"{uuid.uuid4()}_{file}")
+            shutil.copy(file_path, backup_file_path)
+
+    logging.info(f"Backup completed. All files are backed up to: {self.backup_path}")
+
 
 def main():
     parser = argparse.ArgumentParser(description='AcSecurity - Scan applications for security vulnerabilities.')
