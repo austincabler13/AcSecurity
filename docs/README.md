@@ -22,7 +22,6 @@ AcSecurity is a Python module designed to scan applications for common security 
     - [🧑‍💻About the Founder](#about-the-founder)
     - [🗒️Acknowledgments](#️acknowledgments)
   - [🐍Python Package](#python-package)
-  - [⚖️Note](#️note)
 
 ## 🆘Installation
 
@@ -106,7 +105,7 @@ Contributions are welcome! Please follow these steps:
 
 ## ⚖️License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU License. See the [LICENSE](LICENSE) file for details.
 
 ## 🔨Founder
 
@@ -120,12 +119,10 @@ I am the founder of AcSecurity. As the sole developer on this project, I created
 
 ### 🗒️Acknowledgments
 
-If you would like to contribute to this project, please contact me. As a solo developer, I would love to receive help from individuals interested in my project.
+If you would like to contribute to this project, please contact me or go to[Contribute](/CONTRIBUTING.md) . As a solo developer, I would love to receive help from individuals interested in my project.
 
 ## 🐍Python Package
 
 [![Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
 
-## ⚖️Note
-
-Please do not rewrite, or sell this without my permission.
+## Copyright (C) 2024  Austin Cabler

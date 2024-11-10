@@ -9,3 +9,5 @@ from src.scanner import main as AcSecurity
 __all__ = ['AcSecurity']
 __author__ = 'Austin Cabler'
 __version__ = '1.2.0'
+
+## Copyright (C) 2024  Austin Cabler

@@ -30,3 +30,5 @@ setup(
     ],
     python_requires='>=3.12',
 )
+
+## Copyright (C) 2024  Austin Cabler

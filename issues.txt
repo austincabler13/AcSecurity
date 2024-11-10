@@ -1,3 +1,6 @@
 Vulnerabilities found:
 Error checking dependencies: [WinError 267] The directory name is invalid
-Error checking code quality: Command '['pylint', 'A:\\GitHub\\CGS\\3D-Make']' returned non-zero exit status 1.
+Code quality issues found:
+************* Module C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests
+C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests:1:0: F0001: No module named C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests (fatal)
+Suggestion: Review the reported issues and improve your code accordingly.

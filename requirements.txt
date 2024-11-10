@@ -1,7 +1,9 @@
 pip-audit
-pylint
+pylint==2.15.0
 argparse
 pytest
 openai
 setuptools
 uuid
+
+## Copyright (C) 2024  Austin Cabler
