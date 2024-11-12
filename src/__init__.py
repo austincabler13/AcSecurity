@@ -8,6 +8,6 @@ and code quality issues.
 from src.scanner import main as AcSecurity
 __all__ = ['AcSecurity']
 __author__ = 'Austin Cabler'
-__version__ = '1.2.1'
+__version__ = '1.2.2'
 
 ## Copyright (C) 2024  Austin Cabler

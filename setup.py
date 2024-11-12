@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='AcSecurity',
-    version='1.2.1',
+    version='1.2.2',
     packages=find_packages(),
     install_requires=[
         'pip-audit',
@@ -25,8 +25,7 @@ setup(
     url='https://github.com/austincabler13/AcSecurity',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
+        'License :: OSI Approved :: GNU License',
     ],
     python_requires='>=3.12',
 )

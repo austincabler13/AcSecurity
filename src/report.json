@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0",
+    "version": "1.2.2",
     "issues": [
         "Potential hardcoded secret found in: C:\\Users\\Cable\\Documents\\GitHub\\CGS\\AcSecurity\\src\\scanner.py",
         "No dependency vulnerabilities found.",

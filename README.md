@@ -21,7 +21,7 @@ AcSecurity is a Python module designed to scan applications for common security 
   - [🔨Founder](#founder)
     - [🧑‍💻About the Founder](#about-the-founder)
     - [🗒️Acknowledgments](#️acknowledgments)
-  - [🐍Python Package](#python-package)
+  - [📛Badges](#badges)
 
 ## 🆘Installation
 
