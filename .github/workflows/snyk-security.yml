@@ -32,7 +32,7 @@ jobs:
           pip install -r requirements.txt
           
       - name: Set up Snyk CLI
-        uses: snyk/actions@2.320.0
+        uses: snyk/actions@v2.7.0
         with:
           snyk-token: ${{ secrets.SNYK_TOKEN }}
 
