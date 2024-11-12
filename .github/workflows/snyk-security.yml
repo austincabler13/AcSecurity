@@ -47,10 +47,6 @@ jobs:
       - name: Run Snyk Code Test (SAST) and save results in SARIF format
         run: |
           snyk code test --sarif-file-output=snyk-code.sarif --exit-code=0 || true
-          if [ ! -f snyk-code.sarif ]; then
-            echo "snyk-code.sarif not found, skipping SARIF upload step."
-            exit 0
-          fi
 
       - name: Snyk Open Source Monitor (SCA)
         run: snyk monitor || true
@@ -58,16 +54,20 @@ jobs:
       - name: Snyk Infrastructure as Code Test (IaC)
         run: snyk iac test --report -d || true
 
-      - name: Upload SARIF file to GitHub Code Scanning
-        if: ${{ success() && steps.check_sarif.outputs.sarif_exists == 'true' }}
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: snyk-code.sarif
-
       - name: Check if SARIF file exists
         id: check_sarif
         run: |
           if [ -f snyk-code.sarif ]; then
-            echo "sarif_exists=true" >> $GITHUB_ENV
+            echo "sarif_exists=true"
           else
-            echo "sarif_exists=false" >> $GITHUB_ENV
+            echo "sarif_exists=false"
+          fi
+        # Set output based on file existence
+        shell: bash
+        continue-on-error: true
+
+      - name: Upload SARIF file to GitHub Code Scanning
+        if: steps.check_sarif.outputs.sarif_exists == 'true'
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk-code.sarif
