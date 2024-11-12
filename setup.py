@@ -25,7 +25,7 @@ setup(
     url='https://github.com/austincabler13/AcSecurity',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: GNU License',
+        'License :: OSI Approved :: MIT License',
     ],
     python_requires='>=3.12',
 )
