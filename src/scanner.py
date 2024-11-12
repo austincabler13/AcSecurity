@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class AcSecurity:
     """Scanner for identifying security vulnerabilities and code quality issues in an application."""
 
-    VERSION = "1.2.0"
+    VERSION = "1.2.1"
 
     def __init__(self, app_path):
         self.app_path = app_path
