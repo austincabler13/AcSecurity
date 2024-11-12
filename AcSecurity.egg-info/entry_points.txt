@@ -1,2 +1,2 @@
 [console_scripts]
-acsecurity = AcSecurity.run_scanner:main
+acsecurity = src.scanner:main

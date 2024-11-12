@@ -1,0 +1,19 @@
+[project]
+name = AcSecurity"
+version = "1.2.2"
+authors = [
+  { name="Austin Cabler", email="austin_cabler@gmail.com" },
+]
+description = "A security scanner for applications."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Founder = "https://github.com/austincabler13/"
+Github = "https://github.com/austincabler13/AcSecurity"
+Issues = "https://github.com/austincabler13/AcSecurity/issues"

@@ -126,5 +126,4 @@ If you would like to contribute to this project, please contact me or go to [Con
 - [![Snyk Security Analysis](https://github.com/austincabler13/AcSecurity/actions/workflows/snyk-security.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/snyk-security.yml)
 - [![Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
 
-
 Copyright (C) 2024  Austin Cabler
