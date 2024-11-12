@@ -45,15 +45,22 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk Code Test (SAST) and save results in SARIF format
-        run: snyk code test --sarif-file-output=snyk-code.sarif --exit-code=0 || true
+        run: |
+          snyk code test --sarif-file-output=snyk-code.sarif --exit-code=0 || true
+          if [ ! -f snyk-code.sarif ]; then
+            echo "snyk-code.sarif not found, skipping SARIF upload step."
+            exit 0
+          fi
 
       - name: Snyk Open Source Monitor (SCA)
         run: snyk monitor || true
 
       - name: Snyk Infrastructure as Code Test (IaC)
-        run: snyk iac test --report || true
+        run: snyk iac test --report -d || true
 
       - name: Upload SARIF file to GitHub Code Scanning
+        if: exists('snyk-code.sarif')
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-code.sarif
+
