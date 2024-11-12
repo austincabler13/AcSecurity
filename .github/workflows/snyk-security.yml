@@ -47,6 +47,14 @@ jobs:
         #  with:
         #    node-version: 20
 
+              # Set up Python virtual environment
+      - name: Set up Python virtual environment
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
         env:
           # This is where you will need to introduce the Snyk API token created with your Snyk account
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
