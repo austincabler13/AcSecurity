@@ -121,8 +121,10 @@ I am the founder of AcSecurity. As the sole developer on this project, I created
 
 If you would like to contribute to this project, please contact me or go to [Contribute](/CONTRIBUTING.md) . As a solo developer, I would love to receive help from individuals interested in my project.
 
-## 🐍Python Package
+## 📛Badges
 
-[![Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
+- [![Snyk Security](https://github.com/austincabler13/AcSecurity/actions/workflows/snyk-security.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/snyk-security.yml)
+- [![Python Package](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml/badge.svg)](https://github.com/austincabler13/AcSecurity/actions/workflows/python-publish.yml)
 
-- Copyright (C) 2024  Austin Cabler
+
+Copyright (C) 2024  Austin Cabler
