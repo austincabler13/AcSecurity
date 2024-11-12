@@ -57,17 +57,11 @@ jobs:
       - name: Run Snyk Code Test
         run: snyk code test --sarif --exit-code=0 > snyk-code.sarif || true
 
-        # Set up Python virtual environment
-      - name: Set up Python virtual environment
-        run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt --skip-unresolved
-
         # Runs Snyk Open Source (SCA) analysis and uploads result to Snyk.
       - name: Snyk Open Source monitor
-        run: snyk monitor
+        run: 
+         snyk monitor
+         pip install -r requirements.txt
 
         # Runs Snyk Infrastructure as Code (IaC) analysis and uploads result to Snyk.
         # Use || true to not fail the pipeline.
