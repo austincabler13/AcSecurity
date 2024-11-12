@@ -1,6 +1,6 @@
 [project]
 name = AcSecurity"
-version = "1.2.2"
+version = "1.2.3"
 authors = [
   { name="Austin Cabler", email="austin_cabler@gmail.com" },
 ]
