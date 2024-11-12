@@ -44,8 +44,8 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      - name: Run Snyk Code Test (SAST) and save results
-        run: snyk code test --sarif --exit-code=0 > snyk-code.sarif || true
+      - name: Run Snyk Code Test (SAST) and save results in SARIF format
+        run: snyk code test --sarif-file-output=snyk-code.sarif --exit-code=0 || true
 
       - name: Snyk Open Source Monitor (SCA)
         run: snyk monitor || true
