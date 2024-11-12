@@ -59,8 +59,15 @@ jobs:
         run: snyk iac test --report -d || true
 
       - name: Upload SARIF file to GitHub Code Scanning
-        if: exists('snyk-code.sarif')
+        if: ${{ success() && steps.check_sarif.outputs.sarif_exists == 'true' }}
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-code.sarif
 
+      - name: Check if SARIF file exists
+        id: check_sarif
+        run: |
+          if [ -f snyk-code.sarif ]; then
+            echo "sarif_exists=true" >> $GITHUB_ENV
+          else
+            echo "sarif_exists=false" >> $GITHUB_ENV
