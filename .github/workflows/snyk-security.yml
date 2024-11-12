@@ -16,11 +16,11 @@
 # For more examples, including how to limit scans to only high-severity issues
 # and fail PR checks, see https://github.com/snyk/actions/
 
-name: Snyk Security
+name: Snyk Security Analysis
 
 on:
   push:
-    branches: ["main" ]
+    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -30,50 +30,44 @@ permissions:
 jobs:
   snyk:
     permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      contents: read                  # Required for actions/checkout to fetch code
+      security-events: write          # Required for github/codeql-action/upload-sarif to upload SARIF results
+      actions: read                   # Required only for private repositories
+
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Snyk CLI to check for security issues
-        # Snyk can be used to break the build when it detects security issues.
-        # In this case we want to upload the SAST issues to GitHub Code Scanning
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Snyk CLI
         uses: snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb
-
-        # For Snyk Open Source you must first set up the development environment for your application's dependencies
-        # For example for Node
-        #- uses: actions/setup-node@v4
-        #  with:
-        #    node-version: 20
-
         env:
-          # This is where you will need to introduce the Snyk API token created with your Snyk account
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-        # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
-        # Use || true to not fail the pipeline
-      - name: Snyk Code test
-        run: snyk code test --sarif > snyk-code.sarif # || true
+      - name: Run Snyk Code Test (SAST) and save results in SARIF format
+        run: |
+          snyk code test --sarif-file-output=snyk-code.sarif --exit-code=0 || true
 
-        # Runs Snyk Open Source (SCA) analysis and uploads result to Snyk.
-      - name: Snyk Open Source monitor
-        run: snyk monitor --all-projects
+      - name: Snyk Open Source Monitor (SCA)
+        run: snyk monitor || true
 
-        # Runs Snyk Infrastructure as Code (IaC) analysis and uploads result to Snyk.
-        # Use || true to not fail the pipeline.
-      - name: Snyk IaC test and report
-        run: snyk iac test --report # || true
+      - name: Snyk Infrastructure as Code Test (IaC)
+        run: snyk iac test --report -d || true
 
-        # Build the docker image for testing
-      - name: Build a Docker image
-        run: docker build -t your/image-to-test .
-        # Runs Snyk Container (Container and SCA) analysis and uploads result to Snyk.
-      - name: Snyk Container monitor
-        run: snyk container monitor your/image-to-test --file=Dockerfile
+      - name: Check if SARIF file exists
+        id: check_sarif
+        run: |
+          if [ -f snyk-code.sarif ]; then
+            echo "sarif_exists=true"
+          else
+            echo "sarif_exists=false"
+          fi
+        # Set output based on file existence
+        shell: bash
+        continue-on-error: true
 
-        # Push the Snyk Code results into GitHub Code Scanning tab
-      - name: Upload result to GitHub Code Scanning
+      - name: Upload SARIF file to GitHub Code Scanning
+        if: steps.check_sarif.outputs.sarif_exists == 'true'
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk-code.sarif

@@ -1,6 +1,5 @@
 pip-audit
 pylint==2.15.0
-argparse
 pytest
 openai
 setuptools
