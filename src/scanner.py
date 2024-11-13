@@ -4,7 +4,6 @@ import argparse
 import logging
 import shutil
 import json
-import openai  # Make sure to install this package
 import uuid
 
 # Set up logging
@@ -13,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class AcSecurity:
     """Scanner for identifying security vulnerabilities and code quality issues in an application."""
 
-    VERSION = "1.2.3"
+    VERSION = "1.2.4"
 
     def __init__(self, app_path):
         self.app_path = app_path
@@ -42,7 +41,7 @@ class AcSecurity:
 
     def check_file(self, file_path):
         """Check a specific file for hardcoded sensitive information."""
-        logging.info(f"Checking file: {file_path}")
+        logging.info("Checking file: %s", file_path)
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
             if 'secret' in content or 'password' in content:
@@ -57,7 +56,11 @@ class AcSecurity:
                 self.vulnerabilities.append(f"Dependency vulnerabilities found:\n{result.stdout.strip()}")
             else:
                 self.vulnerabilities.append("No dependency vulnerabilities found.")
-        except Exception as e:
+        except subprocess.CalledProcessError as e:
+            self.vulnerabilities.append(f"Error checking dependencies: {e}")
+        except FileNotFoundError as e:
+            self.vulnerabilities.append(f"Error checking dependencies: {e}")
+        except PermissionError as e:
             self.vulnerabilities.append(f"Error checking dependencies: {e}")
 
     def check_code_quality(self):
@@ -66,7 +69,8 @@ class AcSecurity:
         result = subprocess.run(
             ['pylint', '--rcfile=.pylintrc', self.app_path],
             capture_output=True,
-            text=True
+            text=True,
+            check=True
         )
         if result.returncode == 0:
             self.vulnerabilities.append("No code quality issues found.")
@@ -98,7 +102,7 @@ class AcSecurity:
             "version": self.VERSION,
             "issues": [],
         }
-        
+
         for issue in self.vulnerabilities:
             issue_details = {"message": issue}
             if 'hardcoded secret' in issue:
@@ -113,39 +117,6 @@ class AcSecurity:
             json.dump(report, f, indent=4)
         logging.info("Report generated: report.json")
 
-    def fix_code_with_ai(self, code_snippet):
-        """Use ChatGPT to suggest fixes for the provided code snippet."""
-        openai.api_key = "YOUR_API_KEY"  # Add your OpenAI API key
-
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Here is a code snippet with issues:\n{code_snippet}\nPlease suggest fixes."
-                }
-            ]
-        )
-
-        return response['choices'][0]['message']['content']
-
-    def interact_with_user(self):
-        """Allow user to interact and decide whether to fix issues or not."""
-        for issue in self.vulnerabilities:
-            print(issue)
-            user_choice = input("Would you like to get AI suggestions for this issue? (yes/no): ")
-            if user_choice.lower() == 'yes':
-                code_snippet = input("Please provide the code snippet to fix:\n")
-                ai_suggestion = self.fix_code_with_ai(code_snippet)
-                print(f"AI Suggestion:\n{ai_suggestion}")
-                apply_fix = input("Would you like to apply this fix? (yes/no): ")
-                if apply_fix.lower() == 'yes':
-                    pass  # Implement applying fix if necessary
-                else:
-                    print("Fix not applied.")
-            else:
-                print("No AI suggestions requested.")
-
     def backup_code(self):
         """Backup the application code."""
         if not os.path.exists(self.backup_path):
@@ -157,7 +128,7 @@ class AcSecurity:
                 backup_file_path = os.path.join(self.backup_path, f"{uuid.uuid4()}_{file}")
                 shutil.copy(file_path, backup_file_path)
 
-        logging.info(f"Backup completed. All files are backed up to: {self.backup_path}")
+        logging.info("Backup completed. All files are backed up to: %s", self.backup_path)
 
 def main():
     parser = argparse.ArgumentParser(description='AcSecurity - Scan applications for security vulnerabilities.')
@@ -175,18 +146,15 @@ def main():
 
     if args.app_path:
         scanner = AcSecurity(args.app_path)
-        
+
         if args.backup:
             scanner.backup_code()
 
         scanner.scan()
         print("Scan completed. Check 'issues.txt' for details.")
-        
+
         if args.report:
             scanner.generate_report()
 
-        scanner.interact_with_user()
-
 if __name__ == "__main__":
     main()
-## Copyright (C) 2024  Austin Cabler
