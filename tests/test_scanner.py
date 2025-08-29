@@ -1,7 +1,10 @@
 from src.scanner import AcSecurity
-import pylint
+from pathlib import Path
+import pylint  # ensure dependency is installed
 
-scanner = AcSecurity('C:/Users/Cable/Documents/GitHub/CGS/AcSecurity/tests')
+# Use the directory containing this test file so the tests run on any machine
+tests_dir = Path(__file__).resolve().parent
+scanner = AcSecurity(str(tests_dir))
 vulnerabilities = scanner.scan()
 
 ## Copyright (C) 2024  Austin Cabler
