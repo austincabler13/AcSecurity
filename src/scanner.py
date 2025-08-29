@@ -66,18 +66,21 @@ class AcSecurity:
     def check_code_quality(self):
         """Run pylint to check code quality issues."""
         logging.info("Checking code quality...")
-        result = subprocess.run(
-            ['pylint', '--rcfile=.pylintrc', self.app_path],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        if result.returncode == 0:
-            self.vulnerabilities.append("No code quality issues found.")
-        elif result.returncode in (28,):  # Adjust as needed for specific exit codes
-            self.vulnerabilities.append(f"Code quality issues (non-fatal):\n{result.stdout.strip()}")
-        else:
-            self.vulnerabilities.append(f"Code quality issues found:\n{result.stdout.strip()}")
+        try:
+            result = subprocess.run(
+                ['pylint', '--rcfile=.pylintrc', self.app_path],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode == 0:
+                self.vulnerabilities.append("No code quality issues found.")
+            else:
+                self.vulnerabilities.append(
+                    f"Code quality issues found:\n{result.stdout.strip()}"
+                )
+        except (subprocess.CalledProcessError, FileNotFoundError, PermissionError) as e:
+            self.vulnerabilities.append(f"Error checking code quality: {e}")
 
     def write_issues_to_file(self):
         """Write the found vulnerabilities and issues to issues.txt file with suggestions for fixing."""
@@ -126,7 +129,10 @@ class AcSecurity:
             for file in files:
                 file_path = os.path.join(root, file)
                 backup_file_path = os.path.join(self.backup_path, f"{uuid.uuid4()}_{file}")
-                shutil.copy(file_path, backup_file_path)
+                try:
+                    shutil.copy(file_path, backup_file_path)
+                except (FileNotFoundError, PermissionError) as e:
+                    logging.error("Failed to backup %s: %s", file_path, e)
 
         logging.info("Backup completed. All files are backed up to: %s", self.backup_path)
 
