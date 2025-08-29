@@ -66,18 +66,24 @@ class AcSecurity:
     def check_code_quality(self):
         """Run pylint to check code quality issues."""
         logging.info("Checking code quality...")
-        result = subprocess.run(
-            ['pylint', '--rcfile=.pylintrc', self.app_path],
-            capture_output=True,
-            text=True,
-            check=True
-        )
+        try:
+            result = subprocess.run(
+                ['pylint', '--rcfile=.pylintrc', self.app_path],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        except FileNotFoundError as e:
+            self.vulnerabilities.append(f"Error running pylint: {e}")
+            return
+
         if result.returncode == 0:
             self.vulnerabilities.append("No code quality issues found.")
         elif result.returncode in (28,):  # Adjust as needed for specific exit codes
             self.vulnerabilities.append(f"Code quality issues (non-fatal):\n{result.stdout.strip()}")
         else:
-            self.vulnerabilities.append(f"Code quality issues found:\n{result.stdout.strip()}")
+            output = result.stdout.strip() or result.stderr.strip()
+            self.vulnerabilities.append(f"Code quality issues found:\n{output}")
 
     def write_issues_to_file(self):
         """Write the found vulnerabilities and issues to issues.txt file with suggestions for fixing."""
