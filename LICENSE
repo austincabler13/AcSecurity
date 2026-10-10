@@ -1,0 +1,124 @@
+# CABLER TECHNOLOGIES SOURCE-AVAILABLE LICENSE
+
+>Version 1.0 — Draft for Legal Review
+
+Copyright (C) 2026 Austin Cabler and other applicable copyright holders.
+
+## 1. Definitions
+
+**Software** means the source code, executable files, documentation, and associated materials distributed with a notice identifying this license.
+
+**Licensor** means the copyright holder or holders authorized to license the Software.
+
+**Licensee** means any individual or organization exercising permissions under this license.
+
+**Modified Version** means a modification, adaptation, or derivative work based on the Software.
+
+**Distribution** means providing a copy of the Software or a Modified Version to another party.
+
+## 2. Grant of License
+
+Subject to the terms of this license, the Licensor grants Licensees a non-exclusive, worldwide, royalty-free, non-transferable license to:
+
+1. Use and execute the Software for lawful personal, educational, research, and internal business purposes.
+2. Access, inspect, and study its source code.
+3. Modify the Software for private use.
+4. Distribute unmodified copies without charge.
+5. Distribute Modified Versions without charge, subject to Section 4.
+6. Contribute improvements to the Software.
+
+No ownership of the Software or its intellectual property is transferred.
+
+## 3. Commercial Redistribution Restrictions
+
+The following activities require prior written permission from the Licensor:
+
+1. Selling copies of the Software.
+2. Selling Modified Versions of the Software.
+3. Charging mandatory fees for downloading, obtaining, or receiving copies of the Software.
+4. Incorporating the Software into another product and selling that product as a means of redistributing the covered Software.
+
+Internal commercial use of the Software is permitted.
+
+Charging for separate installation, consulting, technical support, maintenance, or training services is permitted, provided those charges are not used to circumvent the restrictions on selling copies.
+
+## 4. Modification and Redistribution
+
+Licensees may modify the Software.
+
+When distributing a Modified Version, the Licensee must:
+
+1. Clearly identify the changes made.
+2. Preserve existing copyright notices.
+3. Include a copy of this license.
+4. Make the complete corresponding source code of the distributed Modified Version available without charge.
+5. Apply this license to the covered Modified Version.
+6. Clearly identify the Modified Version as unofficial unless expressly authorized by the Licensor.
+
+Private modifications do not need to be published.
+
+## 5. Copyright and Ownership
+
+All copyrights and other intellectual property rights remain with their respective owners.
+
+Contributors retain ownership of their contributions unless a separate written agreement provides otherwise.
+
+Submitting a contribution does not automatically transfer copyright ownership to the Licensor.
+
+Each contributor is responsible for ensuring that they possess the rights necessary to submit their contributions.
+
+## 6. Third-Party Components
+
+Third-party components remain governed by their respective licenses.
+
+This license does not override third-party licenses or grant rights that the Licensor does not possess.
+
+Licensees are responsible for complying with all applicable third-party license obligations.
+
+## 7. Trademarks and Branding
+
+No trademark rights are granted under this license.
+
+Licensees may not represent Modified Versions as official products of Cabler Technologies LLC or use associated branding to imply endorsement without authorization.
+
+Accurate identification of the Software's origin is permitted to the extent allowed by law.
+
+## 8. Warranty Disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+
+THE COPYRIGHT HOLDERS AND CONTRIBUTORS DISCLAIM ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+## 9. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDERS AND CONTRIBUTORS SHALL NOT BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES ARISING FROM THE SOFTWARE OR ITS USE.
+
+## 10. Termination
+
+Rights granted under this license terminate upon violation of its conditions.
+
+The Licensor may provide written notice of a violation and an opportunity to cure it.
+
+Restoration of terminated rights may be granted in writing by the Licensor.
+
+## 11. Additional Permissions
+
+The Licensor may grant separate commercial redistribution rights or other permissions through a written agreement.
+
+Such agreements apply only to the parties and Software identified in those agreements.
+
+## 12. Scope
+
+This license applies only to Software that expressly identifies CTSAL-1.0 as its governing license.
+
+It does not automatically apply to other projects owned, maintained, or distributed by the Licensor.
+
+Separate projects may use different licenses.
+
+---
+
+>End of Cabler Technologies Source-Available License 1.0
+
+### STATUS: DRAFT — NOT LEGALLY REVIEWED
+
+This draft is intended for review by a qualified intellectual-property attorney before final adoption.
