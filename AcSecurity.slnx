@@ -1,2 +1,6 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AcSecurity.Cli/AcSecurity.Cli.csproj" />
+    <Project Path="src/AcSecurity.Core/AcSecurity.Core.csproj" />
+  </Folder>
 </Solution>
