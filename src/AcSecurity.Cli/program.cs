@@ -1,4 +1,3 @@
-using System;
 using AcSecurity.Core;
 
 Console.WriteLine("AcSecurity 2.0");
