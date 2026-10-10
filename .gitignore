@@ -1,0 +1,64 @@
+
+# ==========================================
+# AcSecurity 2.0 - .gitignore
+# ==========================================
+
+# .NET build outputs
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+artifacts/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+
+# Visual Studio user settings
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# VS Code local settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Test results
+TestResults/
+*.trx
+coverage/
+coverage.*
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+appsettings.Development.json
+secrets.json
+*.pfx
+*.p12
+*.key

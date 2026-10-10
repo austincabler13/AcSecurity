@@ -1,21 +1,5 @@
-Metadata-Version: 2.1
-Name: AcSecurity
-Version: 1.2.4
-Summary: A security scanner for applications.
-Home-page: https://github.com/austincabler13/AcSecurity
-Author: Austin Cabler
-Author-email: austin_cabler@icloud.com
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Requires-Python: >=3.12
-Description-Content-Type: text/markdown
-Requires-Dist: pip-audit
-Requires-Dist: pylint
-Requires-Dist: argparse
-Requires-Dist: pytest
-
-
-# 🔒AcSecurity
+>Remake in Development with a programming language I can code in
+## 🔒AcSecurity
 
 AcSecurity is a Python module designed to scan applications for common security vulnerabilities. It checks for hardcoded secrets, dependency vulnerabilities, and code quality issues.
 
